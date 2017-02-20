@@ -30,6 +30,7 @@ class DotPay
     public function __construct($pin, $version = 'current')
     {
         $this->pin = $pin;
+        $this->version = $version;
     }
 
     /**
