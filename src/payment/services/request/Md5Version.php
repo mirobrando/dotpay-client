@@ -44,7 +44,7 @@ class Md5Version implements NotificationRequest
     }
 
 
-    private function verifySignature(Notice $notice, $pin) {
+    public function verifySignature(Notice $notice, $pin) {
         $control = [
             $pin,$notice->getId(),$notice->getControl(),$notice->getOperationNumber(),$notice->getOperationAmount(),
             $notice->getEmail(),'','','', '',$notice->getOperationStatus()];
