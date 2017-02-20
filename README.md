@@ -3,7 +3,7 @@
 > notification
 
 ``` 
-$dotpay = new \mirolabs\dotpay\client\payment\DotPay('pin');
+$dotpay = new \mirolabs\dotpay\client\payment\DotPay('pin', 'current');
 $dotpay->setNotificationObjects([$notificationClass]);
 $dotpay->receivedNotice();
 ```

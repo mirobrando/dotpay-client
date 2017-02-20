@@ -10,6 +10,11 @@ class DotPay
     private $pin;
 
     /**
+     * @var string
+     */
+    private $version;
+
+    /**
      * @var Notification[]
      */
     private $observators = array();
@@ -22,7 +27,7 @@ class DotPay
     /**
      * @param string $pin
      */
-    public function __construct($pin)
+    public function __construct($pin, $version = 'current')
     {
         $this->pin = $pin;
     }
@@ -104,7 +109,12 @@ class DotPay
     private function getNotificationRequest()
     {
         if (is_null($this->notificationRequest)) {
-            $this->notificationRequest = new services\NotificationRequest();
+            $requestParam = new services\RequestParam();
+            if (strtolower($this->version) == 'md5') {
+                $this->notificationRequest = new services\request\Md5Version($requestParam);
+            } else {
+                $this->notificationRequest = new services\request\CurrentVersion($requestParam);
+            }
         }
         return $this->notificationRequest;
     }
