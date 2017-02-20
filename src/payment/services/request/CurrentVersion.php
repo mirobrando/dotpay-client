@@ -3,6 +3,7 @@ namespace mirolabs\dotpay\client\payment\services\request;
 
 use mirolabs\dotpay\client\payment\services\NotificationRequest;
 use mirolabs\dotpay\client\payment\services\RequestParam;
+use mirolabs\dotpay\client\payment\model\Notice;
 
 class CurrentVersion implements NotificationRequest
 {
