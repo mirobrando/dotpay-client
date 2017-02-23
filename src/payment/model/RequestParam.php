@@ -224,14 +224,6 @@ class RequestParam
     /**
      * @var string
      * @JMS\Type("string")
-     * @JMS\SerializedName("blik_code")
-     */
-    private $blikCode;
-
-
-    /**
-     * @var string
-     * @JMS\Type("string")
      * @JMS\SerializedName("personal_data")
      */
     private $personalData;
@@ -597,11 +589,13 @@ class RequestParam
     function setPersonalData($personalData)
     {
         $this->personalData = $personalData;
+        return $this;
     }
 
     function setBylaw($bylaw)
     {
         $this->bylaw = $bylaw;
+        return $this;
     }
 
     
