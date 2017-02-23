@@ -100,6 +100,8 @@ class DotPay
         $check.= $request->getCountry();
         $check.= $request->getInfo();
         $check.= $request->getContactEmail();
+        $check.= $request->getBylaw();
+        $check.= $request->getPersonalData();
         $check.= $request->getBlikCode();
         $request->setCheck(hash('sha256', $check));
     }

@@ -220,6 +220,29 @@ class RequestParam
      */
     private $blikCode;
 
+
+    /**
+     * @var string
+     * @JMS\Type("string")
+     * @JMS\SerializedName("blik_code")
+     */
+    private $blikCode;
+
+
+    /**
+     * @var string
+     * @JMS\Type("string")
+     * @JMS\SerializedName("personal_data")
+     */
+    private $personalData;
+
+    /**
+     * @var string
+     * @JMS\Type("string")
+     * @JMS\SerializedName("bylaw")
+     */
+    private $bylaw;
+
     /**
      * @var string
      * @JMS\Type("string")
@@ -561,7 +584,27 @@ class RequestParam
         return $this;
     }
 
+    function getPersonalData()
+    {
+        return $this->personalData;
+    }
 
+    function getBylaw()
+    {
+        return $this->bylaw;
+    }
+
+    function setPersonalData($personalData)
+    {
+        $this->personalData = $personalData;
+    }
+
+    function setBylaw($bylaw)
+    {
+        $this->bylaw = $bylaw;
+    }
+
+    
 
 
 
